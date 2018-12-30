@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 let weatherBox = document.querySelector('.weather');
                 let sky= json.weather[0].main;
                 let temp = json.main.temp;
-                let country = `${json.name},${json.sys.country}` ;
+                let country = `${json.name}, ${json.sys.country}` ;
                 let icon = json.weather[0].icon;
                 let html = "";
-                html += `<div class=country>${country}</div><br />`
-                html += `<div class=temp>${temp}<span style="color:#00FFFF"> °C</span></div><br />`
-                html += `<div class=sky>${sky}</div><br />`
+                html += `<div class=country>Your Location: ${country}</div><br />`
+                html += `<div class=temp>Your Temperature: ${temp}<span style="color:#00FFFF"> °C</span></div><br />`
+                html += `<div class=sky>Current Sky: ${sky}</div><br />`
                 html += `<img src='${icon}' alt='Weather Condition' class="weatherIcon"></img><br />`
                 weatherBox.innerHTML = html;
             }
